@@ -6,8 +6,8 @@ Application Full-Stack de reservation de salles d'etude ou de reunion developpee
 - Membre 2 : Alhadji Nassourou
 - Membre 3 : Brou kouassi
 - Membre 4 : Eyenga owona claire leslie
-- Membre 5 : leonel
-## 📁 Structure du projet
+- Membre 5 : Laoudje leonel
+##  Structure du projet
 
 ```
 reservation-salles/
@@ -60,7 +60,7 @@ reservation-salles/
 
 ---
 
-## ⚙️ Partie 1 — Installation et lancement du Backend
+##  Partie 1 — Installation et lancement du Backend
 
 ### Prérequis
 - Node.js ≥ 18
@@ -102,7 +102,7 @@ npm run dev
 npm start
 ```
 
-✅ Le serveur démarre sur `http://localhost:5000`
+ Le serveur démarre sur `http://localhost:5000`
 
 ---
 
@@ -132,15 +132,15 @@ VITE_API_BASE_URL=http://localhost:5000
 npm run dev
 ```
 
-✅ L'application s'ouvre sur `http://localhost:5173`
+ L'application s'ouvre sur `http://localhost:5173`
 
 ---
 
-## 🧪 Partie 3 — Tests de l'API avec PowerShell
+##  Partie 3 — Tests de l'API avec PowerShell
 
 Démarrez le backend, puis testez chaque route :
 
-### ➡️ Créer une salle (POST /api/rooms)
+###  Créer une salle (POST /api/rooms)
 
 ```powershell
 Invoke-RestMethod -Method POST -Uri "http://localhost:5000/api/rooms" `
@@ -154,13 +154,13 @@ Invoke-RestMethod -Method POST -Uri "http://localhost:5000/api/rooms" `
   -Body '{"name":"Salle TD-101","capacity":20,"features":["Tableau blanc"]}'
 ```
 
-### ➡️ Lister toutes les salles (GET /api/rooms)
+###  Lister toutes les salles (GET /api/rooms)
 
 ```powershell
 Invoke-RestMethod -Uri "http://localhost:5000/api/rooms"
 ```
 
-### ➡️ Créer une réservation (POST /api/bookings)
+###  Créer une réservation (POST /api/bookings)
 
 Remplacez `ROOM_ID` par l'`_id` retourné lors de la création de salle.
 
@@ -170,7 +170,7 @@ Invoke-RestMethod -Method POST -Uri "http://localhost:5000/api/bookings" `
   -Body '{"roomId":"ROOM_ID","studentName":"NJOYA Aminatou","studentGroup":"GI3","date":"2026-06-09","timeSlot":"08:00-10:00","purpose":"Préparation Projet React"}'
 ```
 
-### ➡️ Tester le rejet d'un doublon (même roomId + date + timeSlot)
+###  Tester le rejet d'un doublon (même roomId + date + timeSlot)
 
 ```powershell
 Invoke-RestMethod -Method POST -Uri "http://localhost:5000/api/bookings" `
@@ -178,15 +178,15 @@ Invoke-RestMethod -Method POST -Uri "http://localhost:5000/api/bookings" `
   -Body '{"roomId":"ROOM_ID","studentName":"MBAH Didier","studentGroup":"GI3","date":"2026-06-09","timeSlot":"08:00-10:00","purpose":"Doublon test"}'
 ```
 
-> ✅ Réponse attendue : `409 Conflict` avec le message d'erreur explicite.
+>  Réponse attendue : `409 Conflict` avec le message d'erreur explicite.
 
-### ➡️ Réservations d'une salle pour une date donnée
+###  Réservations d'une salle pour une date donnée
 
 ```powershell
 Invoke-RestMethod -Uri "http://localhost:5000/api/rooms/ROOM_ID/bookings?date=2026-06-09"
 ```
 
-### ➡️ Planning du jour (Admin)
+###  Planning du jour (Admin)
 
 ```powershell
 Invoke-RestMethod -Uri "http://localhost:5000/api/bookings/today"
@@ -194,7 +194,7 @@ Invoke-RestMethod -Uri "http://localhost:5000/api/bookings/today"
 
 ---
 
-## 🔒 Règle métier critique — Anti-doublon
+##  Règle métier critique — Anti-doublon
 
 La protection contre les doubles réservations est assurée à **deux niveaux** :
 
@@ -205,7 +205,7 @@ La protection contre les doubles réservations est assurée à **deux niveaux** 
 
 ---
 
-## 🎨 Parcours utilisateur
+##  Parcours utilisateur
 
 | Rôle | Action | Route |
 |------|--------|-------|
@@ -217,7 +217,7 @@ La protection contre les doubles réservations est assurée à **deux niveaux** 
 
 ---
 
-## 🛠️ Technologies utilisées
+##  Technologies utilisées
 
 | Couche | Stack |
 |--------|-------|
