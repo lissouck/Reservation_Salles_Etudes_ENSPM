@@ -1,0 +1,120 @@
+/* src/pages/RoomList.css */
+
+.rooms-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+/* ── Grille des cartes ───────────────────────────────────────── */
+
+.rooms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+/* ── Carte salle ─────────────────────────────────────────────── */
+
+.room-card.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  transition: transform var(--transition), box-shadow var(--transition);
+  cursor: pointer;
+  border-left: 4px solid transparent;
+}
+
+.room-card.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-left-color: var(--color-accent);
+}
+
+.room-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.room-icon {
+  font-size: 1.4rem;
+}
+
+.room-capacity {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-primary-light);
+  background: var(--color-primary-ghost);
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+}
+
+.room-name {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.room-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.feature-tag {
+  font-size: 0.75rem;
+  font-weight: 500;
+  background: var(--color-accent-light);
+  color: #7a5c00;
+  border: 1px solid #e8d28a;
+  padding: 0.15rem 0.55rem;
+  border-radius: 20px;
+}
+
+.no-features {
+  font-size: 0.82rem;
+  color: var(--color-text-light);
+  font-style: italic;
+}
+
+.room-card-footer {
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+.room-cta {
+  font-size: 0.82rem;
+  width: 100%;
+  justify-content: center;
+}
+
+/* ── État vide ───────────────────────────────────────────────── */
+
+.empty-state.card {
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.empty-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.empty-state h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.empty-state p {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
