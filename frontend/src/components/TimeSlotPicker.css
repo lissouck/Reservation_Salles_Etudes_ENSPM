@@ -1,0 +1,107 @@
+/* src/components/TimeSlotPicker.css */
+
+.timeslot-picker {
+  margin-top: 0.5rem;
+}
+
+.timeslot-legend {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.85rem;
+}
+
+.legend-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 3px;
+}
+
+.legend-dot.free    { background: var(--color-success); }
+.legend-dot.taken   { background: var(--color-danger); }
+.legend-dot.selected { background: var(--color-accent); }
+
+/* Grille des créneaux */
+
+.timeslot-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+@media (min-width: 560px) {
+  .timeslot-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Bouton créneau */
+
+.slot-btn {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  padding: 0.9rem 0.5rem;
+  border-radius: var(--radius-md);
+  border: 2px solid transparent;
+  font-weight: 600;
+  font-size: 0.88rem;
+  transition: all var(--transition);
+  min-height: 72px;
+}
+
+/* Disponible */
+.slot-btn.slot-free {
+  background: var(--color-success-bg);
+  border-color: #b7dfc9;
+  color: var(--color-success);
+}
+
+.slot-btn.slot-free:hover {
+  background: #cceedd;
+  border-color: var(--color-success);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(26,122,74,0.2);
+}
+
+/* Occupé */
+.slot-btn.slot-taken {
+  background: var(--color-danger-bg);
+  border-color: #f5c6c2;
+  color: var(--color-danger);
+  cursor: not-allowed;
+  opacity: 0.85;
+}
+
+/* Sélectionné */
+.slot-btn.slot-selected {
+  background: var(--color-accent-light);
+  border-color: var(--color-accent);
+  color: #7a5c00;
+  box-shadow: 0 0 0 3px rgba(201,162,39,0.2);
+}
+
+.slot-time {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+}
+
+.slot-badge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  opacity: 0.8;
+}
+
+.slot-badge.selected-badge {
+  color: var(--color-accent);
+  opacity: 1;
+}
