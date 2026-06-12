@@ -1,30 +1,29 @@
-/* src/components/Navbar.css */
+/* Navbar.css — Fiverr style */
 
 .navbar {
-  background: var(--color-primary);
-  border-bottom: 3px solid var(--color-accent);
+  background: #ffffff;
+  border-bottom: 1px solid #e8e8e8;
   position: sticky;
   top: 0;
   z-index: 100;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
 }
 
 .navbar-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 60px;
+  height: 64px;
 }
 
 .navbar-brand {
   display: flex;
   align-items: center;
-  gap: 0.7rem;
+  gap: 0.6rem;
   text-decoration: none;
 }
 
-.navbar-icon {
-  font-size: 1.4rem;
-}
+.navbar-icon { font-size: 1.4rem; }
 
 .navbar-title-block {
   display: flex;
@@ -34,41 +33,38 @@
 
 .navbar-title {
   font-family: var(--font-display);
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--color-text);
 }
 
 .navbar-sub {
-  font-size: 0.7rem;
-  color: var(--color-accent);
-  letter-spacing: 0.06em;
+  font-size: 0.68rem;
+  color: var(--color-primary);
+  letter-spacing: 0.05em;
   text-transform: uppercase;
+  font-weight: 600;
 }
 
 .navbar-links {
   list-style: none;
   display: flex;
-  gap: 0.5rem;
+  gap: 0.4rem;
 }
 
 .nav-link {
   display: block;
   padding: 0.45rem 1rem;
-  border-radius: var(--radius-sm);
-  color: rgba(255,255,255,0.75);
+  border-radius: var(--radius-md);
+  color: var(--color-text-muted);
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 600;
   transition: background var(--transition), color var(--transition);
 }
 
-.nav-link:hover,
-.nav-link.active {
-  background: rgba(255,255,255,0.12);
-  color: #fff;
-}
+.nav-link:hover { color: var(--color-text); background: var(--color-bg); }
 
 .nav-link.active {
-  background: rgba(201,162,39,0.25);
-  color: var(--color-accent);
+  color: var(--color-primary);
+  background: var(--color-primary-light);
 }

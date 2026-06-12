@@ -60,7 +60,7 @@
 /* Disponible */
 .slot-btn.slot-free {
   background: var(--color-success-bg);
-  border-color: #b7dfc9;
+  border-color: #ccb7df;
   color: var(--color-success);
 }
 

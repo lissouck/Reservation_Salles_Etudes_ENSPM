@@ -1,5 +1,4 @@
 /* src/index.css */
-/* Design system — palette académique sobre avec accent bleu nuit */
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -8,40 +7,38 @@
 }
 
 :root {
-  /* Palette */
-  --color-bg: #f0f2f7;
+  /* Palette Fiverr */
+  --color-bg: #f5f5f5;
   --color-surface: #ffffff;
-  --color-surface-2: #f8f9fc;
-  --color-border: #e2e6ef;
-  --color-primary: #1e3a5f;       /* Bleu nuit ENSP */
-  --color-primary-light: #2a5298;
-  --color-primary-ghost: #e8edf5;
-  --color-accent: #c9a227;        /* Or académique */
-  --color-accent-light: #fdf6e3;
-  --color-success: #1a7a4a;
-  --color-success-bg: #e8f5ed;
-  --color-danger: #c0392b;
+  --color-surface-2: #fafafa;
+  --color-border: #e8e8e8;
+  --color-primary: #1dbf73;       /* Vert Fiverr */
+  --color-primary-dark: #19a463;  /* Vert foncé hover */
+  --color-primary-light: #e9f9f1; /* Vert très clair */
+  --color-primary-ghost: #d4f5e7; /* Vert ghost */
+  --color-accent: #404145;        /* Gris anthracite Fiverr */
+  --color-success: #1dbf73;
+  --color-success-bg: #e9f9f1;
+  --color-danger: #e53935;
   --color-danger-bg: #fdecea;
-  --color-text: #1a2332;
-  --color-text-muted: #6b7a96;
-  --color-text-light: #9aa3b5;
+  --color-text: #404145;
+  --color-text-muted: #74767e;
+  --color-text-light: #b5b6ba;
 
   /* Typographie */
-  --font-display: 'Space Grotesk', sans-serif;
+  --font-display: 'Inter', sans-serif;
   --font-body: 'Inter', sans-serif;
 
   /* Espacements */
-  --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 16px;
-  --shadow-card: 0 1px 4px rgba(30,58,95,0.08), 0 4px 16px rgba(30,58,95,0.06);
-  --shadow-hover: 0 4px 12px rgba(30,58,95,0.14), 0 8px 28px rgba(30,58,95,0.10);
-  --transition: 200ms ease;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --shadow-card: 0 2px 8px rgba(0,0,0,0.08);
+  --shadow-hover: 0 8px 24px rgba(0,0,0,0.12);
+  --transition: 180ms ease;
 }
 
-html {
-  font-size: 16px;
-}
+html { font-size: 16px; }
 
 body {
   font-family: var(--font-body);
@@ -51,20 +48,9 @@ body {
   min-height: 100vh;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-button {
-  cursor: pointer;
-  border: none;
-  font-family: var(--font-body);
-}
-
-input, select, textarea {
-  font-family: var(--font-body);
-}
+a { color: inherit; text-decoration: none; }
+button { cursor: pointer; border: none; font-family: var(--font-body); }
+input, select, textarea { font-family: var(--font-body); }
 
 /* ── Layout ──────────────────────────────────────────────────── */
 
@@ -74,9 +60,7 @@ input, select, textarea {
   padding: 0 1.5rem;
 }
 
-.page {
-  padding: 2.5rem 0 4rem;
-}
+.page { padding: 2.5rem 0 4rem; }
 
 /* ── Cards ───────────────────────────────────────────────────── */
 
@@ -88,13 +72,13 @@ input, select, textarea {
   padding: 1.5rem;
 }
 
-/* ── Typography helpers ──────────────────────────────────────── */
+/* ── Typography ──────────────────────────────────────────────── */
 
 .page-title {
   font-family: var(--font-display);
   font-size: 1.75rem;
   font-weight: 700;
-  color: var(--color-primary);
+  color: var(--color-text);
   margin-bottom: 0.25rem;
 }
 
@@ -105,10 +89,9 @@ input, select, textarea {
 }
 
 .section-title {
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--color-primary);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text);
   margin-bottom: 1rem;
 }
 
@@ -130,13 +113,13 @@ input, select, textarea {
 .alert-success {
   background: var(--color-success-bg);
   color: var(--color-success);
-  border: 1px solid #b7dfc9;
+  border: 1px solid #a8e6ca;
 }
 
 .alert-info {
-  background: var(--color-primary-ghost);
-  color: var(--color-primary-light);
-  border: 1px solid #c5d3e8;
+  background: var(--color-primary-light);
+  color: var(--color-primary-dark);
+  border: 1px solid #a8e6ca;
 }
 
 /* ── Buttons ─────────────────────────────────────────────────── */
@@ -145,7 +128,7 @@ input, select, textarea {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  padding: 0.6rem 1.2rem;
+  padding: 0.65rem 1.25rem;
   border-radius: var(--radius-md);
   font-size: 0.9rem;
   font-weight: 600;
@@ -158,17 +141,19 @@ input, select, textarea {
 }
 
 .btn-primary:hover:not(:disabled) {
-  background: var(--color-primary-light);
-  box-shadow: 0 2px 8px rgba(30,58,95,0.25);
+  background: var(--color-primary-dark);
+  box-shadow: 0 4px 12px rgba(29,191,115,0.35);
 }
 
 .btn-secondary {
-  background: var(--color-primary-ghost);
-  color: var(--color-primary);
+  background: var(--color-surface);
+  color: var(--color-text);
+  border: 1.5px solid var(--color-border);
 }
 
 .btn-secondary:hover:not(:disabled) {
-  background: #dce5f3;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
 }
 
 .btn:disabled {
@@ -188,17 +173,14 @@ input, select, textarea {
 .form-group label {
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--color-text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
+  color: var(--color-text);
 }
 
 .form-group input,
 .form-group textarea,
 .form-group select {
-  padding: 0.6rem 0.9rem;
-  border: 1.5px solid var(--color-border);
-  border-radius: var(--radius-sm);
+  padding: 0.65rem 0.9rem;
+  border: 1.5px solid var(--color-border);border-radius: var(--radius-md);
   font-size: 0.95rem;
   color: var(--color-text);
   background: var(--color-surface);
@@ -209,8 +191,8 @@ input, select, textarea {
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus {
-  border-color: var(--color-primary-light);
-  box-shadow: 0 0 0 3px rgba(42,82,152,0.12);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(29,191,115,0.15);
 }
 
 /* ── Loading spinner ─────────────────────────────────────────── */
@@ -231,9 +213,7 @@ input, select, textarea {
   animation: spin 0.7s linear infinite;
 }
 
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
+@keyframes spin { to { transform: rotate(360deg); } }
 
 /* ── Back link ───────────────────────────────────────────────── */
 
@@ -248,6 +228,4 @@ input, select, textarea {
   transition: color var(--transition);
 }
 
-.back-link:hover {
-  color: var(--color-primary);
-}
+.back-link:hover { color: var(--color-primary); }
