@@ -7,7 +7,7 @@ const express = require('express');
 const cors = require('cors');
 const connectDB = require('./config/db');
 const errorHandler = require('./middleware/errorHandler');
-
+const protect = require('./middleware/authMiddleware');
 // ─── Connexion à MongoDB ──────────────────────────────────────────────────────
 connectDB();
 
@@ -19,13 +19,14 @@ const app = express();
 app.use(cors({
   origin: process.env.FRONTEND_URL || 'http://localhost:5173',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
 }));
 
 // Parse automatiquement les corps de requête JSON
 app.use(express.json());
 
 // ─── Routes API ───────────────────────────────────────────────────────────────
+app.use('/api/auth', require('./routes/auth'));
 app.use('/api/rooms', require('./routes/rooms'));
 app.use('/api/bookings', require('./routes/bookings'));
 

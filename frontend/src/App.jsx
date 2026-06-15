@@ -3,6 +3,8 @@
 
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import PrivateRoute   from './components/PrivateRoute';
+import Login          from './pages/Login'; 
 import RoomList from './pages/RoomList';
 import RoomDetail from './pages/RoomDetail';
 import AdminDashboard from './pages/AdminDashboard';
@@ -21,9 +23,11 @@ const App = () => {
 
         {/* Détail d'une salle : disponibilités + réservation */}
         <Route path="/rooms/:id" element={<RoomDetail />} />
-
+        <Route path="/login"     element={<Login />} />
         {/* Administration */}
-        <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/admin" element={            
+           <PrivateRoute><AdminDashboard /></PrivateRoute>
+        } />
         <Route path="/admin/add-room" element={<AddRoom />} />
 
         {/* Route 404 — page non trouvée */}
@@ -42,4 +46,3 @@ const App = () => {
 };
 
 export default App;
-

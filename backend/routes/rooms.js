@@ -5,6 +5,7 @@ const express = require('express');
 const router = express.Router();
 const Room = require('../models/Room');
 const Booking = require('../models/Booking');
+const protect = require('../middleware/authMiddleware');
 
 // ─── GET /api/rooms ───────────────────────────────────────────────────────────
 // Retourne la liste complète de toutes les salles
@@ -38,7 +39,7 @@ router.get('/:id', async (req, res, next) => {
 
 // ─── POST /api/rooms ──────────────────────────────────────────────────────────
 // Crée une nouvelle salle (réservé à l'administrateur dans le MVP)
-router.post('/', async (req, res, next) => {
+router.post('/', protect, async (req, res, next) => {
   try {
     const { name, capacity, features } = req.body;
 

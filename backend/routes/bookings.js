@@ -5,12 +5,14 @@ const express = require('express');
 const router = express.Router();
 const Booking = require('../models/Booking');
 const Room = require('../models/Room');
+const protect = require('../middleware/authMiddleware');
+
 
 // ─── GET /api/bookings/today ──────────────────────────────────────────────────
 // Vue administrateur : toutes les réservations du jour en cours
 // IMPORTANT : cette route DOIT être déclarée AVANT /:id pour éviter
 // qu'Express interprète "today" comme un ObjectId.
-router.get('/today', async (req, res, next) => {
+router.get('/today', protect, async (req, res, next) => {
   try {
     // Calcule la date du jour au format YYYY-MM-DD (sans dépendance externe)
     const today = new Date().toISOString().split('T')[0];
