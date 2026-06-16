@@ -42,9 +42,41 @@ html { font-size: 16px; }
 
 body {
   font-family: var(--font-body);
-  background-color: var(--color-bg);
   color: var(--color-text);
   line-height: 1.6;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Image de fond floue */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+
+  background-image: url('/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  filter: none;
+  transform: scale(1.08);
+
+  z-index: -2;
+}
+
+/* Voile sombre */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.0);
+
+  z-index: -1;
+}
+
+.app {
   min-height: 100vh;
 }
 
@@ -229,3 +261,8 @@ input, select, textarea { font-family: var(--font-body); }
 }
 
 .back-link:hover { color: var(--color-primary); }
+.card {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
