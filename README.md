@@ -140,6 +140,18 @@ npm run dev
 
 Démarrez le backend, puis testez chaque route :
 
+## Authentification administrateur
+
+L’acces a l’espace administrateur est protege par JWT.
+
+- URL de connexion : http://localhost:5173/login
+- Email : admin@enspm.cm
+- Mot de passe : Admin1234
+Le token est stocke dans le navigateur et envoye automatiquement
+a chaque requete vers les routes protegees.
+
+Sans connexion, toute tentative d’acces a /admin redirige vers /login.
+
 ###  Créer une salle (POST /api/rooms)
 
 ```powershell
