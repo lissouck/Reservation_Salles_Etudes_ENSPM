@@ -12,7 +12,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar-inner container">
         <Link to="/" className="navbar-brand">
-          <span className="navbar-icon">🏛️</span>
+          <img src="/logo.png" alt="logo" className="navbar-icon-img" />
           <div className="navbar-title-block">
             <span className="navbar-title">ReservSalles</span>
             <span className="navbar-sub">ENSP Maroua</span>
